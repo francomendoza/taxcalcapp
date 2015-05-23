@@ -1,0 +1,29 @@
+<h1>New Stock Purchase</h1>
+<%= form_for @stock_purchase do |f| %>
+  <div>
+    <%= f.label :stock %>
+    <%= f.collection_select :stock_id, @stocks, :id, :symbol, prompt: true %>
+  </div>
+
+  <div>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+
+  <div>
+    <%= f.label :original_amount, "Amount" %>
+    <%= f.number_field :original_amount %>
+  </div>
+
+  <div>
+    <%= f.label :date %>
+    <%= f.datetime_field :date %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

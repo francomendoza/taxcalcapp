@@ -1,0 +1,10 @@
+<tr>
+  <td><%= stock_purchase.stock.symbol %></td>
+  <td><%= stock_purchase.user.name %></td>
+  <td><%= stock_purchase.price %></td>
+  <td><%= stock_purchase.original_amount %></td>
+  <td><%= stock_purchase.current_amount %></td>
+  <td><%= stock_purchase.current_total_value %></td>
+  <td><%= stock_purchase.date %></td>
+  <td><%= link_to 'Sell', new_stock_purchase_stock_sell_path(stock_purchase.id) %></td>
+</tr>

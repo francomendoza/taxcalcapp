@@ -1,0 +1,21 @@
+<h1>New Stock Sell</h1>
+<%= form_for [@stock_purchase, @stock_sell] do |f| %>
+  <%= f.hidden_field :stock_purchase_id, value: @stock_purchase.id %>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+
+  <div>
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+  <div>
+    <%= f.label :date %>
+    <%= f.datetime_field :date %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

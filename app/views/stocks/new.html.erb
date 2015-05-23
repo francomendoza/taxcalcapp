@@ -1,0 +1,9 @@
+<h1>New Stock</h1>
+<%= form_for @stock do |f| %>
+  <div>
+    <%= f.label :symbol %>
+    <%= f.text_field :symbol %>
+  </div>
+  
+  <%= f.submit %>
+<% end %>
