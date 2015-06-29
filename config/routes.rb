@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :stock_purchases do
     resources :stock_sells
   end
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
   resources :users
 
   get 'stock_sells' => 'stock_sells#full_index'
+
+  root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
