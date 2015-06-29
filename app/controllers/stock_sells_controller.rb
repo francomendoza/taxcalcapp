@@ -14,7 +14,7 @@ class StockSellsController < ApplicationController
   end
 
   def full_index
-    @stock_sells = StockSell.all
+    @stock_sells = StockSell.joins(:stock_purchase).where("stock_purchases.user_id = #{current_user.id}")
     render 'index'
   end
 

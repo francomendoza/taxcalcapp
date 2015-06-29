@@ -20,7 +20,7 @@ class StockPurchasesController < ApplicationController
   end
 
   def index
-    @stock_purchases = StockPurchase.all
+    @stock_purchases = StockPurchase.where(user_id: current_user.id)
   end
 
 
