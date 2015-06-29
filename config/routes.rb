@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :w2_incomes
   devise_for :users
   resources :stock_purchases do
     resources :stock_sells
   end
-  resources :stock_transactions
   resources :stocks
   resources :users
 

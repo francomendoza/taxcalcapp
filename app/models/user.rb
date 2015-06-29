@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :stock_transactions
+  has_many :w2_incomes
   has_many :stock_purchases
 end
