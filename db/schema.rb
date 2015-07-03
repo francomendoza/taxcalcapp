@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629040749) do
+ActiveRecord::Schema.define(version: 20150629202850) do
+
+  create_table "gross_incomes", force: :cascade do |t|
+    t.integer  "total"
+    t.integer  "user_id"
+    t.integer  "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "gross_incomes", ["user_id"], name: "index_gross_incomes_on_user_id"
 
   create_table "stock_purchases", force: :cascade do |t|
     t.integer  "stock_id"

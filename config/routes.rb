@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gross_incomes
   resources :w2_incomes
   devise_for :users
   resources :stock_purchases do
