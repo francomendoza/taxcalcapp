@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150629202850) do
 
   create_table "stock_sells", force: :cascade do |t|
     t.integer  "stock_purchase_id"
+    t.integer  "user_id"
     t.integer  "price"
     t.integer  "amount"
     t.datetime "date"
@@ -47,19 +48,7 @@ ActiveRecord::Schema.define(version: 20150629202850) do
   end
 
   add_index "stock_sells", ["stock_purchase_id"], name: "index_stock_sells_on_stock_purchase_id"
-
-  create_table "stock_transactions", force: :cascade do |t|
-    t.integer  "stock_id"
-    t.integer  "user_id"
-    t.integer  "price"
-    t.string   "type_of"
-    t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "stock_transactions", ["stock_id"], name: "index_stock_transactions_on_stock_id"
-  add_index "stock_transactions", ["user_id"], name: "index_stock_transactions_on_user_id"
+  add_index "stock_sells", ["user_id"], name: "index_stock_sells_on_user_id"
 
   create_table "stocks", force: :cascade do |t|
     t.string   "symbol"

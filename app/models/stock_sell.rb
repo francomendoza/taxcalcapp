@@ -14,7 +14,10 @@ class StockSell < ActiveRecord::Base
   def add_to_gross_income
     #find user and year gross income
     year = self.date.year
-    gross_income = GrossIncome.find_by_or_create(user_id: current_user.id, year: year)
-    self.total_sale_value
+    gross_income = GrossIncome.find_by(user_id: self.user_id, year: year)
+    gross_income ||= GrossIncome.create(user_id: self.user_id, year: year, total: 0)
+    
+    gross_income.total += self.total_sale_value
+    gross_income.save
   end
 end

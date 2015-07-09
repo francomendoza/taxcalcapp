@@ -5,7 +5,7 @@ class StockSellsController < ApplicationController
   end
 
   def create
-    @stock_sell = StockSell.new(stock_sell_params)
+    @stock_sell = StockSell.new(stock_purchase_id: stock_sell_params[:stock_purchase_id], price: stock_sell_params[:price], amount: stock_sell_params[:amount], date: stock_sell_params[:date], user_id: current_user.id)
     if @stock_sell.save
       redirect_to stock_purchases_path
     else
